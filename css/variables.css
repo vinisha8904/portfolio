@@ -1,0 +1,35 @@
+/* Design tokens. Every colour in the site comes from here, so switching theme = swapping these values. */
+:root {
+  --font-head: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+
+  --radius: 12px;
+  --header-h: 64px;
+
+  /* Light theme (default) */
+  --bg: #f6f7fb;
+  --bg-alt: #ecefF8;
+  --surface: #ffffff;
+  --ink: #171a33;
+  --muted: #4f566b;
+  --line: #d6dbea;
+  --accent: #2b45c9;
+  --accent-ink: #ffffff;
+  --accent-soft: #e6eafb;
+  --mark: #f2b134;
+  --error: #b42318;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1220;
+  --bg-alt: #141830;
+  --surface: #181c30;
+  --ink: #edf0fa;
+  --muted: #a9b1c9;
+  --line: #2b3150;
+  --accent: #8fa2ff;
+  --accent-ink: #0f1220;
+  --accent-soft: #222a55;
+  --mark: #f2b134;
+  --error: #ff8f85;
+}
