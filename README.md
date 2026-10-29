@@ -6,7 +6,11 @@ A responsive, accessible one-page portfolio. Built for **CodeNova Frontend Devel
 
 ## Screenshots
 
-_Add screenshots here: mobile (375px), tablet (768px), desktop (1280px+), mobile menu open, dark mode._
+![Desktop](desktop.png)
+![Tablet](tablet.png)
+![Mobile](mobile.png)
+![Mobile menu](menu.png)
+![Dark mode](dark.png)
 
 ## Features
 
