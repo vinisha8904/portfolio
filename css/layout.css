@@ -1,0 +1,88 @@
+/* Page structure: container, header, nav drawer, section grids */
+.container { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: 1.25rem; }
+
+.section { padding-block: clamp(3rem, 8vw, 5.5rem); }
+.section-alt { background: var(--bg-alt); }
+.section-intro { color: var(--muted); max-width: 60ch; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--header-h);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { font-family: var(--font-head); font-weight: 700; font-size: 1.4rem; color: var(--ink); text-decoration: none; }
+.header-actions { display: flex; align-items: center; gap: 0.25rem; }
+
+/* ---------- Navigation: mobile drawer first ---------- */
+.site-nav {
+  position: fixed; top: 0; right: 0; z-index: 60;
+  width: min(80vw, 320px); height: 100dvh;
+  padding: calc(var(--header-h) + 1rem) 1.5rem 1.5rem;
+  background: var(--surface);
+  border-left: 1px solid var(--line);
+  transform: translateX(100%);
+  visibility: hidden;                  /* closed drawer links cannot be tabbed to */
+  transition: transform 0.3s ease, visibility 0.3s;
+}
+.site-nav[data-open="true"] { transform: translateX(0); visibility: visible; }
+
+.site-nav ul { display: flex; flex-direction: column; gap: 0.25rem; }
+.site-nav a {
+  display: block; padding: 0.85rem 0.5rem; min-height: 44px;
+  font-weight: 600; font-size: 1.15rem;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.site-nav a[aria-current="true"] { color: var(--accent); }
+
+.nav-backdrop { position: fixed; inset: 0; z-index: 40; background: rgba(10, 12, 25, 0.55); }
+.nav-backdrop[hidden] { display: none; }
+
+/* Header (z 50) holds the drawer, so it sits above the backdrop (z 40) and the toggle stays clickable */
+.header-actions { position: relative; z-index: 70; }
+
+/* ---------- Desktop and tablet: inline nav ---------- */
+@media (min-width: 768px) {
+  .header-actions .nav-toggle, .nav-backdrop { display: none; }
+  .site-nav {
+    position: static; width: auto; height: auto; padding: 0;
+    background: none; border: 0;
+    transform: none; visibility: visible; transition: none;
+    order: 1;
+  }
+  .header-actions { order: 2; }
+  .site-nav ul { flex-direction: row; gap: 0.25rem; }
+  .site-nav a { padding: 0.5rem 0.9rem; font-size: 1rem; border: 0; border-radius: 8px; }
+  .site-nav a:hover { background: var(--accent-soft); }
+  .header-inner { justify-content: flex-start; }
+  .brand { margin-right: auto; }
+}
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(2.5rem, 8vw, 5rem); }
+.hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 52ch; margin-top: 1.25rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 4rem; }
+}
+
+/* ---------- About, skills, projects, contact grids ---------- */
+.about-grid { display: grid; gap: 2rem; }
+.skills-grid, .projects-grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+.contact-grid { display: grid; gap: 2.5rem; }
+
+@media (min-width: 768px) {
+  .about-grid { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr 1.2fr; gap: 3rem; }
+}
+
+.site-footer { padding-block: 1.75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+.site-footer p { margin: 0; }
