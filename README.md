@@ -2,7 +2,7 @@
 
 A responsive, accessible one-page portfolio. Built for **CodeNova Frontend Development Internship, Batch 01, Task 1**.
 
-**Live site:** _add your GitHub Pages link here_
+**Live site:** https://vinisha8904.github.io/portfolio/
 
 ## Screenshots
 
