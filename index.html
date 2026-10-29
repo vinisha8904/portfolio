@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Vinisha, MCA student working toward a career in Software Developemnt.">
+  <title>Vinisha | Portfolio</title>
+
+  <!-- Sets the saved (or system) theme BEFORE the page paints, so there is no light/dark flash -->
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Vinisha</a>
+
+      <div class="header-actions">
+        <button type="button" id="theme-toggle" class="icon-btn" aria-pressed="false" aria-label="Dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></g></svg>
+        </button>
+
+        <button type="button" id="nav-toggle" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><g class="bars" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path class="bar-top" d="M4 7h16"/><path class="bar-mid" d="M4 12h16"/><path class="bar-bot" d="M4 17h16"/></g></svg>
+        </button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-title">Hi, I'm Vinisha. I turn ideas into working software.</h1>
+          <p class="lead">MCA student at Anna University CEG Campus, aiming for a software developer role. I build full-stack projects with React, Node.js and MongoDB, and I learn by shipping them.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#projects">View my projects</a>
+            <a class="btn btn-outline" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-chart" aria-hidden="true">
+          <span style="--h:38%"></span><span style="--h:56%"></span><span style="--h:45%"></span>
+          <span style="--h:72%"></span><span style="--h:63%"></span><span style="--h:92%"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About me</h2>
+        <div class="about-grid">
+          <div class="prose">
+            <!-- EDIT: rewrite these paragraphs in your own words -->
+            <p>I'm a Master of Computer Applications student with a B.Sc. in Computer Science. I enjoy turning an idea into software that works, from the screen a person clicks to the database behind it, and that is the work I want to do as a software developer.</p>
+            <p>Along the way I have built web apps, a machine learning model and a search dashboard. Each project taught me something different, and each one is on my GitHub for you to read. In the longer term, I'm also interested in moving into product management.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Studying</dt><dd>MCA, Anna University CEG Campus (2025 to 2027)</dd></div>
+            <div><dt>Background</dt><dd>B.Sc. Computer Science</dd></div>
+            <div><dt>Aiming for</dt><dd>Software Development roles</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills</h2>
+        <p class="section-intro">Tools I have used in real projects. <!-- EDIT: add only what you can honestly talk about in an interview --></p>
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Languages</h3>
+            <ul class="chips"><li>Python</li><li>JavaScript</li></ul>
+          </article>
+          <article class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>React.js</li></ul>
+          </article>
+          <article class="skill-group">
+            <h3>Backend and databases</h3>
+            <ul class="chips"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT authentication</li></ul>
+          </article>
+          <article class="skill-group">
+            <h3>Machine learning</h3>
+            <ul class="chips"><li>BiLSTM models</li></ul>
+          </article>
+          <article class="skill-group">
+            <h3>Tools</h3>
+            <ul class="chips"><li>Git</li><li>GitHub</li><li>GitHub Pages</li></ul>
+          </article>
+          <article class="skill-group skill-learning">
+            <h3>Learning now</h3>
+            <ul class="chips"><li>Object-oriented Python</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Featured projects</h2>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <h3>Openings Board</h3>
+            <p>A searchable job listing dashboard with live search, combined filters, sorting and pagination, plus clear loading, empty and error screens.</p>
+            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="card-links">
+              <a href="https://vinisha8904.github.io/openings_board/" target="_blank" rel="noopener noreferrer">Live demo<span class="sr-only"> of Openings Board (opens in a new tab)</span></a>
+              <a href="https://github.com/vinisha8904/openings_board" target="_blank" rel="noopener noreferrer">Source code<span class="sr-only"> of Openings Board (opens in a new tab)</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>WiseWave</h3>
+            <p>A bilingual (English and Tamil) learning companion for seniors, with separate dashboards for elders and their caregivers, voice input and secure login.</p>
+            <ul class="chips"><li>React.js</li><li>Node.js</li><li>Express</li><li>MongoDB</li></ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Predictive Maintenance</h3>
+            <p>A deep learning project that uses a BiLSTM model to learn from machine sensor readings and flag equipment that may need servicing.</p>
+            <ul class="chips"><li>Python</li><li>BiLSTM</li><li>Machine learning</li></ul>
+            <div class="card-links">
+              <!-- EDIT: replace with the real repository link -->
+              <a href="https://github.com/vinisha8904/AI-and-Green-Skills-Case-Study--1" target="_blank" rel="noopener noreferrer">Source code<span class="sr-only"> of Predictive Maintenance (opens in a new tab)</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div>
+          <h2 id="contact-title">Contact</h2>
+          <p class="section-intro">Have an opportunity or a question? Send a message and I'll reply by email.</p>
+          <ul class="contact-links">
+            <li><a href="https://github.com/vinisha8904" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a href="https://www.linkedin.com/in/vinisha8904" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+            <p class="error" id="name-error" hidden></p>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+            <p class="error" id="email-error" hidden></p>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+            <p class="error" id="message-error" hidden></p>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Vinisha. Built with HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
