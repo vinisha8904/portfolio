@@ -1,0 +1,113 @@
+/* Reusable components: buttons, chips, cards, form, hero chart */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0.7rem 1.4rem;
+  font: inherit; font-weight: 600; text-decoration: none;
+  border-radius: 10px; border: 2px solid var(--accent); cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s;
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--accent); }
+.btn-outline:hover { background: var(--accent-soft); }
+
+.icon-btn {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px;
+  background: transparent; color: var(--ink);
+  border: 0; border-radius: 10px; cursor: pointer;
+}
+.icon-btn:hover { background: var(--accent-soft); }
+
+/* Theme toggle: show moon in light mode, sun in dark mode */
+.icon-sun { display: none; }
+:root[data-theme="dark"] .icon-sun { display: block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+
+/* Hamburger turns into an X when the drawer is open */
+.nav-toggle .bars path { transition: transform 0.25s, opacity 0.2s; transform-origin: 12px 12px; }
+.nav-toggle[aria-expanded="true"] .bar-top { transform: translateY(5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bar-mid { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .bar-bot { transform: translateY(-5px) rotate(-45deg); }
+
+/* ---------- Hero chart (decorative) ---------- */
+.hero-chart {
+  display: flex; align-items: flex-end; gap: 0.7rem;
+  height: 240px; padding-bottom: 0;
+  border-bottom: 3px solid var(--ink);
+}
+.hero-chart span {
+  flex: 1; height: var(--h);
+  background: var(--accent);
+  border-radius: 8px 8px 0 0;
+  transform-origin: bottom;
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero-chart span:last-child { background: var(--mark); }
+.hero-chart span:nth-child(2) { animation-delay: 0.08s; }
+.hero-chart span:nth-child(3) { animation-delay: 0.16s; }
+.hero-chart span:nth-child(4) { animation-delay: 0.24s; }
+.hero-chart span:nth-child(5) { animation-delay: 0.32s; }
+.hero-chart span:nth-child(6) { animation-delay: 0.4s; }
+
+@keyframes rise { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* ---------- About ---------- */
+.prose p { max-width: 62ch; }
+.facts { margin: 0; display: grid; gap: 1rem; align-content: start; }
+.facts div { padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.facts dt { font-size: 0.95rem; color: var(--muted); }
+.facts dd { margin: 0.15rem 0 0; font-weight: 600; }
+
+/* ---------- Chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chips li {
+  padding: 0.25rem 0.75rem; font-size: 0.95rem; font-weight: 600;
+  background: var(--accent-soft); color: var(--ink);
+  border-radius: 999px;
+}
+
+/* ---------- Skill groups and project cards ---------- */
+.skill-group, .project-card {
+  display: flex; flex-direction: column; gap: 0.9rem;
+  padding: 1.3rem; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.skill-learning { border-style: dashed; }
+
+.project-card { transition: transform 0.2s, border-color 0.2s; }
+.project-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.project-card p { margin: 0; flex-grow: 1; }
+
+.card-links { display: flex; flex-wrap: wrap; gap: 1.25rem; padding-top: 0.8rem; border-top: 1px solid var(--line); }
+.card-links a { font-weight: 600; min-height: 32px; display: inline-flex; align-items: center; }
+
+/* ---------- Contact ---------- */
+.contact-links { display: flex; gap: 1.5rem; margin-top: 1rem; }
+.contact-links a { font-weight: 600; }
+
+.contact-form {
+  display: grid; gap: 1.1rem;
+  padding: 1.5rem; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.form-row { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+.form-row label { font-weight: 600; }
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; font: inherit; color: var(--ink);
+  padding: 0.7rem 0.85rem; min-height: 48px;
+  background: var(--bg); border: 2px solid var(--line); border-radius: 8px;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible { border-color: var(--accent); outline-offset: 1px; }
+.contact-form [aria-invalid="true"] { border-color: var(--error); }
+
+.error { margin: 0; color: var(--error); font-size: 0.95rem; font-weight: 600; }
+.error[hidden] { display: none; }
+.form-status { margin: 0; min-height: 1.5rem; font-weight: 600; }
+.form-status.ok { color: var(--accent); }
